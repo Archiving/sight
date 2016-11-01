@@ -15,9 +15,6 @@
 #include <iostream>
 #include <vector>
 
-#include <stdio.h>
-#include <tchar.h>
-
 
 
 // TODO: reference additional headers your program requires here
