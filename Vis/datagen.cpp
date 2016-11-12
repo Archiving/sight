@@ -3,19 +3,12 @@
 /* KNN Character Recognition */
 
 #include "stdafx.h"
+#include "datagen.h"
 
 using namespace cv;
 
-/* area of letter must be >= 100*/
-const int MIN_CONTOUR_AREA = 100;
-
-/* Resized region of interest widths and heights. */
-const int RESIZED_IMAGE_WIDTH = 20;
-const int RESIZED_IMAGE_HEIGHT = 30;
-
-
 //temporary
-int main(int argc, char** argv) {
+int data_gen() {
 	Mat trainingNumbers;
 	Mat imgGreyscale, imgBlurred, imgThresh, imgThreshCopy;
 	Mat classificationInts; //training classifications
@@ -38,7 +31,6 @@ int main(int argc, char** argv) {
 	//Threshold
 	adaptiveThreshold(imgBlurred, imgThresh, 255, ADAPTIVE_THRESH_GAUSSIAN_C, THRESH_BINARY_INV, 11, 2);
 
-	imshow("Thresh", imgThresh);
 	imgThreshCopy = imgThresh.clone();
 	findContours(imgThreshCopy, ptContours, v4iH, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
 

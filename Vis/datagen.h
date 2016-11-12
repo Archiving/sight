@@ -1,0 +1,6 @@
+
+#define MIN_CONTOUR_AREA 100
+#define RESIZED_IMAGE_HEIGHT 30
+#define RESIZED_IMAGE_WIDTH 20
+
+int data_gen();

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <opencv_storage>
 <classifications type_id="opencv-matrix">
-  <rows>3</rows>
+  <rows>10</rows>
   <cols>1</cols>
   <dt>i</dt>
   <data>
-    57 56 55</data></classifications>
+    55 54 53 52 49 48 57 56 51 50</data></classifications>
 </opencv_storage>
