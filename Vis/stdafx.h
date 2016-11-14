@@ -5,6 +5,10 @@
 
 #pragma once
 
+#define MIN_CONTOUR_AREA 100
+#define RESIZED_IMAGE_HEIGHT 30
+#define RESIZED_IMAGE_WIDTH 20
+
 #include "targetver.h"
 
 #include <opencv2/core/core.hpp>
