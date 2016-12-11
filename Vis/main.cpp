@@ -3,6 +3,6 @@
 #include "datagen.h"
 
 int main() {
-	//data_gen();
+	//gen_data();
 	recognize();
 }

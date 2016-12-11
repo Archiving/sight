@@ -8,7 +8,7 @@
 using namespace cv;
 
 //temporary
-int data_gen() {
+void gen_data() {
 	Mat trainingNumbers;
 	Mat imgGreyscale, imgBlurred, imgThresh, imgThreshCopy;
 	Mat classificationInts; //training classifications
@@ -18,7 +18,6 @@ int data_gen() {
 	if (!trainingNumbers.data) {
 		std::cout << "Could not read file!" << std::endl;
 		std::cin.get();
-		return 0;
 	}
 	std::vector<int> valid = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 	std::vector<Vec4i> v4iH; //contours hierarchy
@@ -49,7 +48,7 @@ int data_gen() {
 
 			int intChar = waitKey(0);
 			if (intChar == 27) {
-				return 0;
+				exit(0);
 			}
 			else if (std::find(valid.begin(), valid.end(), intChar) != valid.end()) {
 				classificationInts.push_back(intChar);
@@ -71,7 +70,6 @@ int data_gen() {
 	if (!classifications.isOpened()) {
 		std::cout << "Couldnt write classifications.xml to file, exiting program" << std::endl;
 		std::cin.get();
-		return 0;
 	}
 
 	classifications << "classifications" << classificationInts;
@@ -81,11 +79,9 @@ int data_gen() {
 	if (!trainingImages.isOpened()) {
 		std::cout << "Couldn't write images.xml to file, exiting program" << std::endl;
 		std::cin.get();
-		return 0;
 	}
 	trainingImages << "images" << trainingImagesAsFlattenedFloats;
 	trainingImages.release();
 
 	waitKey(0);
-	return 0;
 }
